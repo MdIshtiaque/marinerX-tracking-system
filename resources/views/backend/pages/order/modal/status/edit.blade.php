@@ -24,19 +24,19 @@
                     <div class="flex flex-col gap-5 py-5 px-5 md:px-9">
                         <div>
                             <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Title</label>
-                            <input type="text" id="title" name="title" value="{{ $order->status->first()->title }}"
+                            <input type="text" id="title" name="title" value="{{ optional($order->status->first())->title }}"
                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5"
                                    placeholder="Status Title" required/>
                         </div>
                         <div>
                             <label for="description" class="block mb-2 text-sm font-medium text-gray-900">Description</label>
-                            <input type="text" id="description" name="description" value="{{ $order->status->first()->description }}"
+                            <input type="text" id="description" name="description" value="{{ optional($order->status->first())->description }}"
                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5"
                                    placeholder="Description" required/>
                         </div>
                         <div>
                             <label for="date" class="block mb-2 text-sm font-medium text-gray-900">Date</label>
-                            <input type="date" id="status_time_date" name="status_time_date" value="{{ \Carbon\Carbon::parse($order->status->first()->status_time_date)->toDateString() }}~"
+                            <input type="date" id="status_time_date" name="status_time_date" value="{{ \Carbon\Carbon::parse(optional($order->status->first())->status_time_date)->toDateString() }}~"
                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5"
                                    placeholder="Select date" required/>
                         </div>

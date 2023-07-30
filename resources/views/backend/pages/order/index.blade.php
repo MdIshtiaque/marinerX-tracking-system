@@ -101,7 +101,7 @@
                             </td>
                             <td class="px-4 py-2">
                                 <button data-tooltip-target="show" data-tooltip-style="light"
-                                        class="md:w-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2"
+                                        class="block w-full text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-2 py-2.5 flex items-center justify-center gap-2"
                                         type="button"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
@@ -156,7 +156,8 @@
                                         <div class="tooltip-arrow" data-popper-arrow></div>
                                     </div>
                                 </button>
-                                <button data-tooltip-target="tooltip1" data-tooltip-style="light"
+                                {{-- @dd(isset($order->status->first()->title)); --}}
+                                <button data-tooltip-target="tooltip1" data-tooltip-style="light" {{ isset($order->status->first()->title) ? '' : "disabled" }}
                                         data-modal-target="popup-modal-{{ $order->id }}"
                                         data-modal-toggle="popup-modal-{{ $order->id }}"
                                         class="block w-full md:w-auto text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-2 py-2.5  flex items-center justify-center gap-2"
