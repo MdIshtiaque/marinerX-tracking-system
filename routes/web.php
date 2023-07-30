@@ -45,6 +45,7 @@ Route::middleware('auth')->group(function () {
 
     # Status
     Route::post('change-status', [StatusController::class, 'changeStatus'])->name('change.status');
+    Route::put('edit-status/{status?}', [StatusController::class, 'editCurrentStatus'])->name('edit.status');
 });
 
 require __DIR__.'/auth.php';

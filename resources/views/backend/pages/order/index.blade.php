@@ -93,12 +93,33 @@
                             <td class="px-4 py-2">{{ $order->booking_no }}</td>
                             <td class="px-4 py-2">{{ $order->starting_port }}</td>
                             <td class="px-4 py-2">{{ $order->destination }}</td>
-                            <td class="px-4 py-2"><span
-                                    class="py-2 px-4 rounded-full bg-green-500 text-white font-bold">{{ isset($order->status->first()->title) ? $order->status->first()->title : "No Status" }}</span>
-                            </td>
-                            <td><span
-                                    class="py-2 px-4 rounded-full bg-green-500 text-white font-bold">{{ isset($order->currentPort) ? $order->currentPort->port->name : "No Port" }}</span>
-                            </td>
+                            <td class="px-2 py-1">
+                                @if (isset($order->status->first()->title))
+                                  <span class="inline-block px-3 py-1 rounded-full bg-green-500 text-white font-bold text-sm max-w-xs whitespace-nowrap">
+                                    {{ $order->status->first()->title }}
+                                  </span>
+                                @else
+                                  <span class="inline-block px-3 py-1 rounded-full bg-red-500 text-white font-bold text-sm max-w-xs whitespace-nowrap">
+                                    No Status
+                                  </span>
+                                @endif
+                              </td>
+
+
+
+                              <td class="px-2 py-1">
+                                @if (isset($order->currentPort))
+                                  <span class="inline-block px-3 py-1 rounded-full bg-green-500 text-white font-bold text-sm max-w-xs whitespace-nowrap">
+                                    {{ $order->currentPort->port->name }}
+                                  </span>
+                                @else
+                                  <span class="inline-block px-3 py-1 rounded-full bg-red-500 text-white font-bold text-sm max-w-xs whitespace-nowrap">
+                                    No Port
+                                  </span>
+                                @endif
+                              </td>
+
+
                             <td class="px-4 py-2">
                                 <button data-tooltip-target="show" data-tooltip-style="light"
                                         class="md:w-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2"
@@ -110,7 +131,6 @@
                                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                         <circle cx="12" cy="12" r="3"></circle>
                                     </svg>
-                                    {{--                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.08V8l-6-6H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h6"/><path d="M14 3v5h5M18 21v-6M15 18h6"/></svg>--}}
                                     <div id="show" role="tooltip"
                                          class="absolute z-10 invisible inline-block px-3 py-1 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 tooltip">
                                         Show
@@ -156,7 +176,7 @@
                                         <div class="tooltip-arrow" data-popper-arrow></div>
                                     </div>
                                 </button>
-                                <button data-tooltip-target="tooltip1" data-tooltip-style="light"
+                                <button data-tooltip-target="tooltip1" data-tooltip-style="light" {{ isset($order->status->first()->title) ? '' : "disabled" }}
                                         data-modal-target="popup-modal-{{ $order->id }}"
                                         data-modal-toggle="popup-modal-{{ $order->id }}"
                                         class="block w-full md:w-auto text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-2 py-2.5  flex items-center justify-center gap-2"

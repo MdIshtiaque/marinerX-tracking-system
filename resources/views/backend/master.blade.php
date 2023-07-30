@@ -41,7 +41,7 @@
             line-height: 1.25; /*leading-tight*/
             border-width: 2px; /*border-2*/
             border-radius: .25rem;
-            border-color: #2d3748; /*border-gray-200*/
+            border-color: #d3d7df; /*border-gray-200*/
             background-color: #edf2f7; /*bg-gray-200*/
         }
 
@@ -49,7 +49,9 @@
         table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
             background-color: #ebf4ff; /*bg-indigo-100*/
         }
-
+        .dataTables_length select {
+             width: 80px; /* Adjust the width as needed */
+        }
         /*Pagination Buttons*/
         .dataTables_wrapper .dataTables_paginate .paginate_button {
             font-weight: 700; /*font-bold*/
@@ -63,18 +65,27 @@
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06); /*shadow*/
             font-weight: 700; /*font-bold*/
             border-radius: .25rem; /*rounded*/
-            background: #667eea !important; /*bg-indigo-500*/
+            background: #4859a7 !important; /*bg-indigo-500*/
             border: 1px solid transparent; /*border border-transparent*/
         }
 
+        .dataTables_filter input:hover,
+        .dataTables_length select:hover {
+            /* Add hover styles for filter and show entries */
+            background-color: #dadada; /* bg-gray-100 */
+            cursor: pointer;
+        }
+
         /*Pagination Buttons - Hover */
-        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-            color: #fff !important; /*text-white*/
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover span {
+            color: #ffffff !important; /*text-white*/
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06); /*shadow*/
             font-weight: 700; /*font-bold*/
             border-radius: .25rem; /*rounded*/
             background: #667eea !important; /*bg-indigo-500*/
-            border: 1px solid transparent; /*border border-transparent*/
+            border: 1px solid transparent;
+            text-decoration: none; /*border border-transparent*/
         }
 
         /*Add padding to bottom border */
