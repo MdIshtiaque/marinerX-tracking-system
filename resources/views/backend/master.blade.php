@@ -41,7 +41,7 @@
             line-height: 1.25; /*leading-tight*/
             border-width: 2px; /*border-2*/
             border-radius: .25rem;
-            border-color: #2d3748; /*border-gray-200*/
+            border-color: #d3d7df; /*border-gray-200*/
             background-color: #edf2f7; /*bg-gray-200*/
         }
 
@@ -69,10 +69,10 @@
             border: 1px solid transparent; /*border border-transparent*/
         }
 
-        .dataTables_filter:hover,
-        .dataTables_length:hover {
+        .dataTables_filter input:hover,
+        .dataTables_length select:hover {
             /* Add hover styles for filter and show entries */
-            background-color: #ffffff; /* bg-gray-100 */
+            background-color: #dadada; /* bg-gray-100 */
             cursor: pointer;
         }
 

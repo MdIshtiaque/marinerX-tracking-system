@@ -32,4 +32,27 @@ class StatusController extends Controller
         }
         return back();
     }
+
+    public function editCurrentStatus(Request $request, Status $status)
+    {
+        try {
+            $request->validate([
+                'order_id' => 'required',
+                'title' => 'required|string|max:255',
+                'description' => 'required|string',
+                'status_time_date' => 'required|date',
+            ]);
+            $status = $status->update([
+                'order_id' => $request->order_id,
+                'title' => $request->title,
+                'description' => $request->description,
+                'status_time_date' => $request->status_time_date
+            ]);
+            toastr()->addSuccess('Current Status Updated successfully');
+        }catch (Exception $exception)
+        {
+            toastr()->addError('Something went wrong');
+        }
+        return back();
+    }
 }
