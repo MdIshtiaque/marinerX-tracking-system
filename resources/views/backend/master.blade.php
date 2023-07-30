@@ -88,7 +88,28 @@
         table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
             background-color: #667eea !important; /*bg-indigo-500*/
         }
+        @media (max-width: 767px) {
+            .dataTables_wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+            }
 
+            .dataTables_filter
+            {
+                order: -1; /* Moves these sections to the top */
+                margin-bottom: 10px;
+            }
+            .dataTables_length {
+                order: -1; /* Moves these sections to the top */
+                margin-bottom: 10px;
+                padding-left: 15px;
+            }
+
+            .dataTables_paginate {
+                margin-top: 10px;
+            }
+        }
 
     </style>
 </head>
@@ -117,13 +138,13 @@
 
 <script>
     $(document).ready(function () {
-        const url = 'http://localhost:3000/api/users';
         $('#myTable').DataTable({
 
         }).columns.adjust()
             .responsive.recalc();
     })
 </script>
+@stack('js')
 </body>
 
 </html>

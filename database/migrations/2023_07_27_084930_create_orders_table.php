@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('bl_no');
             $table->string('booking_no');
-            $table->string('starting_point');
+            $table->string('starting_port');
             $table->string('destination');
             $table->string('vessel_voy_no');
             $table->string('no_of_packages');
@@ -25,17 +25,15 @@ return new class extends Migration
             $table->string('no_of_containers');
             $table->string('measurement');
             $table->string('service_requirement');
-            $table->string('progress1')->nullable();
-            $table->string('progress2')->nullable();
             $table->string('container_no');
             $table->string('size');
             $table->string('type');
             $table->string('seal_no');
-            $table->string('moveType');
+            $table->string('move_type');
             $table->string('latest_event');
             $table->string('place');
             $table->string('vgm');
-            
+
             $table->timestamps();
         });
     }

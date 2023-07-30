@@ -18,6 +18,6 @@ class CurrentPort extends Model
 
     public function port()
     {
-        return $this->hasOne(Port::class);
+        return $this->belongsTo(Port::class);
     }
 }
