@@ -36,7 +36,7 @@
                         </div>
                         <div>
                             <label for="date" class="block mb-2 text-sm font-medium text-gray-900">Date</label>
-                            <input type="date" id="status_time_date" name="status_time_date" value="{{ \Carbon\Carbon::parse($order->status->first()->status_time_date)->toDateString() }}"
+                            <input type="date" id="status_time_date" name="status_time_date" value="{{ \Carbon\Carbon::parse($order->status->first()->status_time_date)->toDateString() }}~"
                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5"
                                    placeholder="Select date" required/>
                         </div>
