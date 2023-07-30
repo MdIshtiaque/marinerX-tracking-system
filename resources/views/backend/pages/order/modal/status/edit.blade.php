@@ -19,7 +19,7 @@
                     </button>
                 </div>
                 <!-- Modal body -->
-                <form action="{{ route('edit.status', optional($order->status->first())->id) }}" method="post">
+                <form action="{{ route('edit.status', optional($order->status->first())->id) }}" id="editCurrentStatusForm" method="post">
                     @csrf
                     @method("PUT")
                     <div class="flex flex-col gap-5 py-5 px-5 md:px-9">
@@ -45,7 +45,7 @@
                     </div>
                     <!-- Modal footer -->
                     <div class="flex items-center justify-end p-6 space-x-2 border-t border-gray-200 rounded-b">
-                        <button data-modal-hide="popup-modal-{{ $order->id }}" type="submit"
+                        <button type="submit" id="editStatus" onclick="onSubmitEditCurrentStatusForm()"
                                 class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">
                             Save
                         </button>
@@ -55,15 +55,17 @@
         </div>
     </div>
 @endforeach
-{{--<script>--}}
-{{--    let isFormSubmitting = false;--}}
-
-{{--    function onSubmitForm(button) {--}}
-{{--        if (!isFormSubmitting) {--}}
-{{--            isFormSubmitting = true;--}}
-{{--            button.innerHTML = 'Saving...'; // Optionally, show a loading text on the button--}}
-{{--            document.getElementById("statusForm").submit();--}}
-{{--        }--}}
-{{--    }--}}
-{{--</script>--}}
+<script>
+    function onSubmitEditCurrentStatusForm() {
+        if (document.getElementById("editCurrentStatusForm").checkValidity()) {
+            $('#editStatus').text('Saving...');
+            $('#editCurrentStatusForm').submit();
+            $('#editStatus').attr('disabled', 'disabled');
+            setTimeout(() => {
+                $('#editStatus').text('Submit');
+                $('#editStatus').removeAttr('disabled');
+            }, 2000)
+        }
+    }
+</script>
 

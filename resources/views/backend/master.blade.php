@@ -54,9 +54,13 @@
         }
         /*Pagination Buttons*/
         .dataTables_wrapper .dataTables_paginate .paginate_button {
+            display: none;
             font-weight: 700; /*font-bold*/
             border-radius: .25rem; /*rounded*/
             border: 1px solid transparent; /*border border-transparent*/
+        }
+        .dataTables_wrapper .dataTables_info{
+            display: none;
         }
 
         /*Pagination Buttons - Current selected */
@@ -155,6 +159,32 @@
             .responsive.recalc();
     })
 </script>
+{{-- <script>
+    // Wait for the DOM to be ready
+    $(document).ready(function() {
+      // Event binding for the edit buttons
+      $(document).on('click', '[data-modal-toggle^="medium-modal-"]', function() {
+        // Extract the order ID from the data-modal-toggle attribute
+        var orderID = $(this).data('modal-toggle').split('-').pop();
+        // Perform actions specific to the edit modal for this order ID
+        console.log('Edit button clicked for order ID:', orderID);
+        // Here, you can show the corresponding edit modal using the orderID
+        // For example: $('#medium-modal-' + orderID).show();
+      });
+
+      // Event binding for other edit buttons (small-modal, popup-modal, etc.)
+      $(document).on('click', '[data-modal-toggle^="small-modal-"]', function() {
+        // Extract the order ID from the data-modal-toggle attribute
+        var orderID = $(this).data('modal-toggle').split('-').pop();
+        // Perform actions specific to the edit modal for this order ID
+        console.log('Small Edit button clicked for order ID:', orderID);
+        // Here, you can show the corresponding edit modal using the orderID
+        $('#small-modal-' + orderID).toggle();
+      });
+
+      // Add more event bindings for other edit buttons if needed
+    });
+</script> --}}
 @stack('js')
 </body>
 

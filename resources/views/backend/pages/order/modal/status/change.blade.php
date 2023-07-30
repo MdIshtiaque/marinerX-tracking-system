@@ -1,5 +1,5 @@
 @foreach($orders as $order)
-    <div id="medium-modal-{{ $order->id }}" tabindex="-1"
+    <div id="status-modal-{{ $order->id }}" tabindex="-1"
          class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative w-full max-w-lg max-h-full">
             <!-- Modal content -->
@@ -9,7 +9,7 @@
                     <h3 class="text-xl font-medium text-gray-900">Change Your Status Here</h3>
                     <button type="button"
                             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center"
-                            data-modal-hide="medium-modal-{{ $order->id }}">
+                            data-modal-hide="status-modal-{{ $order->id }}">
                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                              viewBox="0 0 14 14">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -19,7 +19,7 @@
                     </button>
                 </div>
                 <!-- Modal body -->
-                <form action="{{ route('change.status') }}" method="post">
+                <form action="{{ route('change.status') }}" method="post" id="changeStatusForm">
                     @csrf
                     <div class="flex flex-col gap-5 py-5 px-5 md:px-9">
                         <div>
@@ -44,7 +44,7 @@
                     </div>
                     <!-- Modal footer -->
                     <div class="flex items-center justify-end p-6 space-x-2 border-t border-gray-200 rounded-b">
-                        <button data-modal-hide="medium-modal-{{ $order->id }}" type="submit"
+                        <button type="submit"  id="changeStatus" onclick="onSubmitChangeStatusForm()"
                                 class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">
                             Save
                         </button>
@@ -54,15 +54,17 @@
         </div>
     </div>
 @endforeach
-{{--<script>--}}
-{{--    let isFormSubmitting = false;--}}
-
-{{--    function onSubmitForm(button) {--}}
-{{--        if (!isFormSubmitting) {--}}
-{{--            isFormSubmitting = true;--}}
-{{--            button.innerHTML = 'Saving...'; // Optionally, show a loading text on the button--}}
-{{--            document.getElementById("statusForm").submit();--}}
-{{--        }--}}
-{{--    }--}}
-{{--</script>--}}
+<script>
+    function onSubmitChangeStatusForm() {
+        if (document.getElementById("changeStatusForm").checkValidity()) {
+            $('#changeStatus').text('Saving...');
+            $('#changeStatusForm').submit();
+            $('#changeStatus').attr('disabled', 'disabled');
+            setTimeout(() => {
+                $('#changeStatus').text('Submit');
+                $('#changeStatus').removeAttr('disabled');
+            }, 2000)
+        }
+    }
+</script>
 

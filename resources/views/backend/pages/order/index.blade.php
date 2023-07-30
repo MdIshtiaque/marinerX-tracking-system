@@ -66,6 +66,7 @@
             Create Order
         </button>
     </div>
+
     <hr/>
     <div class="flex flex-col">
         <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -141,10 +142,10 @@
                             <td class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 items-center gap-2">
 
                                 <button data-tooltip-target="changestatus" data-tooltip-style="light"
-                                        data-modal-target="medium-modal-{{ $order->id }}"
-                                        data-modal-toggle="medium-modal-{{ $order->id }}"
+                                        data-modal-target="status-modal-{{ $order->id }}"
+                                        data-modal-toggle="status-modal-{{ $order->id }}"
                                         class="block w-full text-white bg-sky-700 flex-shrink-0 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-2 py-2.5  flex items-center justify-center gap-2"
-                                        type="button"
+                                        type="button" id="openModalBtn"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
                                          fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
@@ -220,6 +221,24 @@
                     @endforeach
                     </tbody>
                 </table>
+                @if ($orders->hasPages())
+                    {{-- <div class="my-5 mx-4 d-flex justify-content-space-between">
+                        {{ $orders->withQueryString()->links() }}
+
+                    </div> --}}
+                    <div class="my-5 mx-4 flex justify-between items-center">
+                        <div>
+                            Showing {{ $orders->firstItem() }} to {{ $orders->lastItem() }} of {{ $orders->total() }} results
+                        </div>
+                        <div>
+                            {{ $orders->withQueryString()->links() }}
+                        </div>
+                    </div>
+
+
+                @endif
+
+
             </div>
         </div>
     </div>
@@ -257,7 +276,7 @@
 
         function onSubmitForm() {
             if (document.getElementById("order").checkValidity()) {
-                $('#orderButton').text('Submiting...');
+                $('#orderButton').text('Saving...');
                 $('#order').submit();
                 $('#orderButton').attr('disabled', 'disabled');
                 setTimeout(() => {
@@ -266,6 +285,7 @@
                 }, 2000)
             }
         }
+
     </script>
 @endpush
 
