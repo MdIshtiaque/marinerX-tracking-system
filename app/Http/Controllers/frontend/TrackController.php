@@ -10,8 +10,9 @@ class TrackController extends Controller
 {
     public function track(Request $request)
     {
+//        dd($request->all());
         $isSearch = false;
-        $active = 0;
+        $active = [];
         $datas = [];
         if($request->inlineRadioOptions == 'option1')
         {
@@ -33,10 +34,10 @@ class TrackController extends Controller
                 foreach($datas->ports as $port){
                     if($datas->currentPort->port_id === $port->id)
                     {
-                        $active++;
+                        $active[] = $port->port_type;
                         break;
                     }else{
-                        $active++;
+                        $active[] = $port->port_type;
                     }
                 }
         }

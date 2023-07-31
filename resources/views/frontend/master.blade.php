@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login to your account</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="public/dist/assets/app-f888e93a.css" >
+    @vite('resources/css/app.css')
 </head>
 
 
@@ -20,7 +21,7 @@
 
     <!-- main section start here -->
     @yield('user_content')
-    
+
     <!-- footer area start here -->
     @include('frontend.partial.footer')
 
@@ -28,6 +29,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+    @vite('resources/css/app.js')
     @stack('js')
 </body>
 
