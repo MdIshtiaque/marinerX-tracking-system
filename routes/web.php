@@ -4,6 +4,7 @@ use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\OrderController;
 use App\Http\Controllers\backend\PortController;
 use App\Http\Controllers\backend\StatusController;
+use App\Http\Controllers\frontend\TrackController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TrackController::class, 'track'])->name('track.order');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

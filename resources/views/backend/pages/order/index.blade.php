@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('content')
-    <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+    <div>
 
         <!--Modal -->
         <div id="extralarge-modal" tabindex="-1"
