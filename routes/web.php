@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     # Order
     Route::post('store', [OrderController::class, 'store'])->name('order.store');
     Route::get('destroy/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
+    Route::get('show/{order?}', [OrderController::class, 'show'])->name('order.show');
 
     # Port
     Route::post('set-current-port', [PortController::class, 'setCurrentPort'])->name('set.port');

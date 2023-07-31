@@ -122,7 +122,7 @@
 
 
                             <td class="px-4 py-2">
-                                <button data-tooltip-target="show" data-tooltip-style="light"
+                                <a data-tooltip-target="show" data-tooltip-style="light" href="{{ route('order.show') }}"
                                         class="md:w-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2"
                                         type="button"
                                 >
@@ -137,7 +137,7 @@
                                         Show
                                         <div class="tooltip-arrow" data-popper-arrow></div>
                                     </div>
-                                </button>
+                                </a>
                             </td>
                             <td class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 items-center gap-2">
 
@@ -222,18 +222,18 @@
                     </tbody>
                 </table>
                 @if ($orders->hasPages())
-                    {{-- <div class="my-5 mx-4 d-flex justify-content-space-between">
+                     <div class="my-5 mx-4 d-flex justify-content-space-between">
                         {{ $orders->withQueryString()->links() }}
 
-                    </div> --}}
-                    <div class="my-5 mx-4 flex justify-between items-center">
-                        <div>
-                            Showing {{ $orders->firstItem() }} to {{ $orders->lastItem() }} of {{ $orders->total() }} results
-                        </div>
-                        <div>
-                            {{ $orders->withQueryString()->links() }}
-                        </div>
                     </div>
+{{--                    <div class="my-5 mx-4 flex justify-between items-center">--}}
+{{--                        <div>--}}
+{{--                            Showing {{ $orders->firstItem() }} to {{ $orders->lastItem() }} of {{ $orders->total() }} results--}}
+{{--                        </div>--}}
+{{--                        <div>--}}
+{{--                            {{ $orders->withQueryString()->links() }}--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
 
                 @endif

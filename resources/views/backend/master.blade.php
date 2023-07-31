@@ -27,6 +27,23 @@
         };
     </script>
     <style>
+        .pagination-item {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            margin-right: 0.25rem;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        .pagination-item.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+
+
+    <style>
+
         /*Overrides for Tailwind CSS */
 
         /*Form fields*/
@@ -49,7 +66,8 @@
         table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
             background-color: #ebf4ff; /*bg-indigo-100*/
         }
-        .dataTables_length select {
+        .dataTables_length{
+            display: none;
              width: 80px; /* Adjust the width as needed */
         }
         /*Pagination Buttons*/
@@ -114,6 +132,7 @@
             {
                 order: -1; /* Moves these sections to the top */
                 margin-bottom: 10px;
+                padding-left: 10px;
             }
             .dataTables_length {
                 order: -1; /* Moves these sections to the top */
