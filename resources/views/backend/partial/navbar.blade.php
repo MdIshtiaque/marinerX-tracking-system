@@ -27,13 +27,13 @@
                     class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow-xl bg-white"
                     id="dropdown-user">
                     <div class="px-4 py-3" role="none">
-                        <p class="text-sm text-200" role="none">Neil Sims</p>
+                        <p class="text-sm text-200" role="none">{{ auth()->user()->name }}</p>
                         <p class="text-sm font-medium text-200 truncate" role="none">
-                            neil.sims@flowbite.com
+                            {{ auth()->user()->email }}
                         </p>
                     </div>
                     <ul class="py-1" role="none">
-                        <li>
+                        {{-- <li>
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-sky-700 hover:text-white"
                                role="menuitem">Dashboard</a>
                         </li>
@@ -44,10 +44,15 @@
                         <li>
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-sky-700 hover:text-white"
                                role="menuitem">Earnings</a>
-                        </li>
+                        </li> --}}
                         <li>
-                            <a href="#" class="block px-4 py-2 text-sm text-red-700 hover:bg-red-500 hover:text-white"
-                               role="menuitem">Logout</a>
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <a class="block px-4 py-2 text-sm text-red-700 hover:bg-red-500 hover:text-white"
+                                   role="menuitem">
+                                    <button type="submit">Log Out</button>
+                                </a>
+                            </form>
                         </li>
                     </ul>
                 </div>
