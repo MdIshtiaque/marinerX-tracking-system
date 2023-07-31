@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('content')
-    <div>
+    <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500">
         <div
             class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-5 items-center mt-3 px-5 md:px-0">
             <div class="flex items-center gap-3 my-3 bg-white px-6 py-6 rounded-xl shadow-lg shadow-zinc-100/80">
@@ -377,7 +377,7 @@
                 </div>
             </div>
         </div>
-        @if(!$data->status->isEmpty())
+        @if (!$data->status->isEmpty())
             <div class="px-5 md:px-0">
                 <div class="bg-white container mx-auto px-5 py-5 mt-10 rounded-xl shadow-lg shadow-zinc-100/80">
                     <p class="text-xl font-semibold mb-5">Route Scheduling Summary</p>
@@ -409,3 +409,9 @@
 
     </div>
 @endsection
+
+@push('js')
+    <script>
+        AOS.init();
+    </script>
+@endpush
