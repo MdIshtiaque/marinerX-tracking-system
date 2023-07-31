@@ -15,15 +15,16 @@ class DashboardController extends Controller
      *
      *
      */
-    public function index(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
+    public function index(Request $request): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
     {
+        $perPage = $request->input('per_page', 10);
         $orders = Order::with([
             'ports',
             'currentPort.port',
             'status' => function ($query) {
                 $query->latest()->get();
             },
-        ])->orderBy('id', 'asc')->paginate(10);
+        ])->orderBy('id', 'asc')->paginate($perPage);
 
         return view('backend.pages.order.index', ['orders' => $orders]);
     }

@@ -55,7 +55,7 @@
             </svg>
         </button>
         <button data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal"
-                class="block w-full md:w-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-3 text-xs md:text-base py-2 text-center items-center gap-2 hidden md:flex"
+                class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 block w-full md:w-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-3 text-xs md:text-base py-2 text-center items-center gap-2 hidden md:flex"
                 type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                  stroke="#ffffff"
@@ -123,7 +123,7 @@
 
                             <td class="px-4 py-2">
                                 <a data-tooltip-target="show" data-tooltip-style="light" href="{{ route('order.show', $order->id) }}"
-                                        class="md:w-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2"
+                                        class="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none md:w-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2"
                                         type="button"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
@@ -144,7 +144,7 @@
                                 <button data-tooltip-target="changestatus" data-tooltip-style="light"
                                         data-modal-target="status-modal-{{ $order->id }}"
                                         data-modal-toggle="status-modal-{{ $order->id }}"
-                                        class="block w-full text-white bg-sky-700 flex-shrink-0 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-2 py-2.5  flex items-center justify-center gap-2"
+                                        class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 block w-full text-white bg-sky-700 flex-shrink-0 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-2 py-2.5  flex items-center justify-center gap-2"
                                         type="button" id="openModalBtn"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
@@ -162,7 +162,7 @@
                                 <button data-tooltip-target="setport" data-tooltip-style="light"
                                         data-modal-target="small-modal-{{ $order->id }}"
                                         data-modal-toggle="small-modal-{{ $order->id }}"
-                                        class="block w-full md:w-auto text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-2 py-2.5  flex items-center justify-center gap-2"
+                                        class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 block w-full md:w-auto text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-2 py-2.5  flex items-center justify-center gap-2"
                                         type="button"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
@@ -180,7 +180,7 @@
                                 <button data-tooltip-target="tooltip1" data-tooltip-style="light" {{ isset($order->status->first()->title) ? '' : "disabled" }}
                                         data-modal-target="popup-modal-{{ $order->id }}"
                                         data-modal-toggle="popup-modal-{{ $order->id }}"
-                                        class="block w-full md:w-auto text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-2 py-2.5  flex items-center justify-center gap-2"
+                                        class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 block w-full md:w-auto text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-2 py-2.5  flex items-center justify-center gap-2"
                                         type="button"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
@@ -198,7 +198,7 @@
                                 </button>
                                 <a data-tooltip-target="delete" data-tooltip-style="light"
                                    href="{{ route('order.destroy', $order->id) }}"
-                                   class="del_warn block w-full md:w-auto text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-2 py-2.5  flex items-center justify-center gap-2"
+                                   class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 del_warn block w-full md:w-auto text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-2 py-2.5  flex items-center justify-center gap-2"
                                    type="button"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
@@ -222,42 +222,25 @@
                     </tbody>
                 </table>
 
-                {{-- <nav aria-label="Pagination" class="inline-flex -space-x-px rounded-md shadow-sm dark:bg-gray-800 dark:text-gray-100">
-                    <button type="button" class="inline-flex items-center px-2 py-2 text-sm font-semibold border rounded-l-md dark:border-gray-700">
-                        <span class="sr-only">Previous</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="w-5 h-5">
-                            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <button type="button" aria-current="page" class="inline-flex items-center px-4 py-2 text-sm font-semibold border dark:bg-violet-400 dark:text-gray-900 dark:border-gray-700">1</button>
-                    <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-700">2</button>
-                    <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-700">3</button>
-                    <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-700">...</button>
-                    <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-700">7</button>
-                    <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-700">8</button>
-                    <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-semibold border dark:border-gray-700">9</button>
-                    <button type="button" class="inline-flex items-center px-2 py-2 text-sm font-semibold border rounded-r-md dark:border-gray-700">
-                        <span class="sr-only">Next</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" class="w-5 h-5">
-                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </nav> --}}
+                {{-- Paginator --}}
                 @if ($orders->hasPages())
-                     <div class="my-5 mx-4 d-flex justify-content-space-between">
-                        {{ $orders->withQueryString()->links() }}
-
+                     <div class="bg-white p-4 flex items-center justify-end flex-wrap">
+                        <nav aria-label="Page navigation">
+                            <ul class="flex">
+                                <li>
+                                    <a href="{{ $orders->previousPageUrl() }}" class="px-4 py-2 text-blue-600 transition-colors duration-150 bg-white border border-blue-600 rounded-l-lg focus:shadow-outline hover:bg-blue-100">Prev</a>
+                                </li>
+                                @for ($i = 1; $i <= $orders->lastPage(); $i++)
+                                    <li>
+                                        <a href="{{ $orders->url($i) }}" class="px-4 py-2 {{ $orders->currentPage() === $i ? 'text-white bg-blue-600' : 'text-blue-600 bg-white' }} border border-blue-600 focus:shadow-outline">{{ $i }}</a>
+                                    </li>
+                                @endfor
+                                <li>
+                                    <a href="{{ $orders->nextPageUrl() }}" class="px-4 py-2 text-blue-600 transition-colors duration-150 bg-white border border-blue-600 rounded-r-lg focus:shadow-outline hover:bg-blue-100">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
-{{--                    <div class="my-5 mx-4 flex justify-between items-center">--}}
-{{--                        <div>--}}
-{{--                            Showing {{ $orders->firstItem() }} to {{ $orders->lastItem() }} of {{ $orders->total() }} results--}}
-{{--                        </div>--}}
-{{--                        <div>--}}
-{{--                            {{ $orders->withQueryString()->links() }}--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-
                 @endif
 
 

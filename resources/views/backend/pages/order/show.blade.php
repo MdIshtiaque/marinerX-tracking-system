@@ -324,7 +324,6 @@
             <div class="bg-white container mx-auto px-5 py-5 mt-10 rounded-xl shadow-lg shadow-zinc-100/80">
                 <p class="text-xl font-semibold mb-5">Shipment Summary</p>
                 <div class="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-5  ">
-                    {{-- @dd($data->ports) --}}
                     @foreach ($data->ports as $port)
                         @php
                             $type = '';
@@ -398,7 +397,7 @@
                                     <p class="text-sm font-medium">{{ $status->title }}</p>
                                     <p class="text-sky-700 text-sm font-medium pb-5">{{ $status->description }}</p>
                                     <p class="text-green-700 text-sm font-medium">
-                                        {{ \Carbon\Carbon::parse($status->status_time_date)->format('jS F, Y \a\t g:i A') }}
+                                        {{ \Carbon\Carbon::parse($status->status_time_date)->format('jS F, Y') }}
                                     </p>
                                 </div>
                             </div>
