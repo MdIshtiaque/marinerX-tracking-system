@@ -23,7 +23,7 @@ class DashboardController extends Controller
             'status' => function ($query) {
                 $query->latest()->get();
             },
-        ])->orderBy('id', 'asc')->get();
+        ])->orderBy('id', 'asc')->paginate(10);
 
         return view('backend.pages.order.index', ['orders' => $orders]);
     }

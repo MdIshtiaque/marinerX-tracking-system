@@ -19,14 +19,15 @@
                     </button>
                 </div>
                 <!-- Modal body -->
-                <form action="{{ route('set.port') }}" id="portForm" method="post">
+                <form action="{{ route('set.port') }}" id="setPortForm" method="post">
                     @csrf
                     <input type="text" value="{{ $order->id }}" name="orderId" hidden>
                     <div class="flex flex-col gap-5 py-5 px-5 md:px-9">
                         <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">Select an
                             option</label>
                         <select id="ports" name="ports"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5" required>
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5"
+                                required onchange="updateSaveButtonState()">
                             <option selected disabled>Choose a Port</option>
                         @foreach($order->ports as $port)
                             <option value="{{ $port->id }}">{{ $port->name }}</option>
@@ -34,7 +35,7 @@
                         </select>
                     </div>
                     <div class="flex items-center justify-end p-6 space-x-2 border-t border-gray-200 rounded-b">
-                        <button type="submit"
+                        <button type="submit" id="setPort"
                                 class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">
                             Save
                         </button>
@@ -45,6 +46,32 @@
         </div>
     </div>
 @endforeach
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $('#setPort').prop('disabled', true);
+
+
+        $('#ports').on('change', function() {
+
+            if ($(this).val() !== null) {
+
+                $('#setPort').prop('disabled', false);
+            } else {
+
+                $('#setPort').prop('disabled', true);
+            }
+        });
+
+        // Handle form submission to disable the button during form processing
+        $('#setPortForm').on('submit', function() {
+            // Disable the Save button to prevent multiple clicks
+            $('#setPort').prop('disabled', true);
+            $('#setPort').text('Saving...');
+        });
+    });
+</script>
 
 
 

@@ -83,4 +83,9 @@ class OrderController extends Controller
         return back();
     }
 
+    public function show(Request $request)
+    {
+        return view('backend.pages.order.show');
+    }
+
 }
