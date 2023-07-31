@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
             $table->string('name');
+            $table->string('port_type');
             $table->dateTime('date_time')->nullable();
             $table->timestamps();
         });

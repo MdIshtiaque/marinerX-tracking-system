@@ -40,12 +40,14 @@ class OrderController extends Controller
             $order->ports()->create([
                 'order_id' => $order->id,
                 'name' => $request->starting_port,
+                'port_type' => 'starting'
             ]);
 
             if ($request->has('second_port') && !empty($request->second_port)) {
                 $order->ports()->create([
                     'order_id' => $order->id,
                     'name' => $request->second_port,
+                    'port_type' => 'second'
                 ]);
             }
 
@@ -53,12 +55,14 @@ class OrderController extends Controller
                 $order->ports()->create([
                     'order_id' => $order->id,
                     'name' => $request->third_port,
+                    'port_type' => 'third'
                 ]);
             }
 
             $order->ports()->create([
                 'order_id' => $order->id,
                 'name' => $request->destination,
+                'port_type' => 'destination'
             ]);
             DB::commit();
             toastr()->addSuccess('Order created successfully');
@@ -83,9 +87,11 @@ class OrderController extends Controller
         return back();
     }
 
-    public function show(Request $request)
+    public function show(Request $request, Order $order)
     {
-        return view('backend.pages.order.show');
+        $data = $order->load('ports', 'status', 'currentPort');
+        // return $data;
+        return view('backend.pages.order.show', ['data' => $data]);
     }
 
 }
