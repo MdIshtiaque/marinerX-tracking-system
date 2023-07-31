@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>welcome to admin panel</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
 
     <!--Regular Datatables CSS-->
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -15,18 +15,8 @@
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clifford: "#da373d",
-                    },
-                },
-            },
-        };
-    </script>
+    <link rel="stylesheet" href="public/dist/assets/app-f888e93a.css">
+    @vite('resources/css/app.css')
     <style>
         .pagination-item {
             display: inline-block;
@@ -179,6 +169,8 @@
             .responsive.recalc();
     })
 </script>
+<script src="public/dist/assets/app-4a08c204.js"></script>
+@vite('resources/css/app.js')
 @stack('js')
 </body>
 
