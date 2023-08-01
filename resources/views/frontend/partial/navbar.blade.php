@@ -2,7 +2,7 @@
 <nav class="bg-white border-gray-200 sticky top-0 left-0 w-full z-50">
     <div class="px-5 md:px-20 mx-auto max-w-screen-xl flex flex-wrap items-center justify-between p-4">
         <a href="#" class="flex items-center">
-            <img src="http://marinerx.co.uk/assets/images/logo.png" class="h-8 mr-3" alt=" Logo" />
+            <img src="{{ asset('assets/image/logo.png') }}" class="h-8 mr-3" alt=" Logo" />
 
         </a>
         <button data-collapse-toggle="navbar-dropdown" type="button"

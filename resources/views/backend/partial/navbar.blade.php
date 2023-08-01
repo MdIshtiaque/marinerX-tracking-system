@@ -11,7 +11,7 @@
                 <rect x="3" y="14" width="7" height="7"></rect>
             </svg>
         </button>
-        <img class="w-32 h-8 mr-2" src="http://marinerx.co.uk/assets/images/logo.png" alt="logo"/>
+        <img class="w-32 h-8 mr-2" src="{{ asset('assets/image/logo.png') }}" alt="logo"/>
         <div class="flex items-center z-50">
             <div class="flex items-center ml-3 text-white hover:text-black">
                 <div>

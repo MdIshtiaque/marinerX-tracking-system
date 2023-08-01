@@ -68,8 +68,9 @@
         </div>
 
         <hr />
-        <div data-aos="fade-right" class="flex flex-col">
-            <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div>
+            <div class="my-2 overflow-x-auto sm:-mx-6 lg:-mx-8" data-aos="fade-up"
+            data-aos-duration="1000">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <table id="myTable" class="display w-full border-collapse border border-gray-300 shadow-sm rounded-xl"
                         style="width:100%">
@@ -128,7 +129,7 @@
                                     <td class="px-4 py-2">
                                         <a data-tooltip-target="show" data-tooltip-style="light"
                                             href="{{ route('order.show', $order->id) }}"
-                                            class="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none md:w-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2"
+                                            class="md:w-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2"
                                             type="button">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                                 viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"

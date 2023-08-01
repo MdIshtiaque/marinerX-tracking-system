@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login to your account</title>
+    <link rel="icon" href="{{ asset('assets/image/favicon.png') }}" type="image/x-icon">
+    <title>MarinerX - UK Transportation & Logistics Service</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="public/dist/assets/app-f888e93a.css" >

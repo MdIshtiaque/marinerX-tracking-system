@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login to your account</title>
+    <link rel="icon" href="{{ asset('assets/image/favicon.png') }}" type="image/x-icon">
+    <title>Login to your account</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -30,7 +31,7 @@
         <div data-aos="zoom-out"
             class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 ">
-                <img class="w-32 h-8 mr-2" src="http://marinerx.co.uk/assets/images/logo.png" alt="logo">
+                <img class="w-32 h-8 mr-2" src="{{ asset('assets/image/logo.png') }}" alt="logo">
 
             </a>
             <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 ">

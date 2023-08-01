@@ -1,7 +1,7 @@
 @extends('frontend.master')
 
 @section('user_content')
-    <div data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0"
+    <div
          class="min-h-screen mb-36 relative">
         <div class="container mx-auto my-10">
             <p class="text-xl mt-5 mb-10 px-5 md:px-0 font-semibold flex justify-center">Trace Your Order Here</p>
@@ -10,25 +10,25 @@
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                id="inlineRadio1"
-                               value="option1" {{ $request->inlineRadioOptions == 'option1' ? 'checked' : ''}}>
+                               value="option1" {{ $request->inlineRadioOptions == 'option1' ? 'checked' : ''}} required>
                         <label class="form-check-label" for="inlineRadio1">Booking No</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                id="inlineRadio2"
-                               value="option2" {{ $request->inlineRadioOptions == 'option2' ? 'checked' : ''}}>
+                               value="option2" {{ $request->inlineRadioOptions == 'option2' ? 'checked' : ''}} required>
                         <label class="form-check-label" for="inlineRadio2">BL No</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                id="inlineRadio3"
-                               value="option3" {{ $request->inlineRadioOptions == 'option3' ? 'checked' : ''}}>
+                               value="option3" {{ $request->inlineRadioOptions == 'option3' ? 'checked' : ''}} required>
                         <label class="form-check-label" for="inlineRadio3">Container No.</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                id="inlineRadio4"
-                               value="option4" {{ $request->inlineRadioOptions == 'option4' ? 'checked' : ''}}>
+                               value="option4" {{ $request->inlineRadioOptions == 'option4' ? 'checked' : ''}} required>
                         <label class="form-check-label" for="inlineRadio4">P/O</label>
                     </div>
                 </div>
@@ -81,7 +81,8 @@
                     @endphp
                 @endforeach
 
-                <div class="mb-36 px-10 md:px-0" data-aos="fade-right">
+                <div class="mb-36 px-10 md:px-0" data-aos="fade-up"
+                data-aos-duration="1000">
                     <p class="text-xl mt-5 mb-10 px-5 md:px-0 font-semibold">Tracking Result:</p>
                     <!-- mobile version for track order -->
                     <ol class="relative text-gray-500 border-l border-gray-200 md:col-span-1 flex md:hidden  flex-col">
@@ -106,8 +107,8 @@
                                         @endif
                                     </div>
                                 </span>
-                                <h3 class="font-medium leading-tight">Chuadanga</h3>
-                                <p class="text-sm">Destination</p>
+                                <h3 class="font-medium leading-tight">{{ $destination_port }}</h3>
+                                <p class="text-sm">Destination Port</p>
                             </li>
                         @endif
                         @if($third_port !== '')
@@ -131,8 +132,8 @@
                                     @endif
                                 </div>
                             </span>
-                                <h3 class="font-medium leading-tight">Review</h3>
-                                <p class="text-sm">thisis my 3nd status 28th July, 2023</p>
+                                <h3 class="font-medium leading-tight">{{ $third_port }}</h3>
+                                <p class="text-sm">Third Port</p>
                             </li>
                         @endif
                         @if($second_port !== '')
@@ -156,8 +157,8 @@
                                         @endif
                                     </div>
                                 </span>
-                                <h3 class="font-medium leading-tight">order</h3>
-                                <p class="text-sm">1st Port</p>
+                                <h3 class="font-medium leading-tight">{{ $second_port }}</h3>
+                                <p class="text-sm">Second Port</p>
                             </li>
                         @endif
                         <li class="ml-6 order-last">
@@ -180,8 +181,8 @@
                                     @endif
                                 </div>
                             </span>
-                            <h3 class="font-medium leading-tight">Dhaka</h3>
-                            <p class="text-sm">starting</p>
+                            <h3 class="font-medium leading-tight">{{ $starting_port }}</h3>
+                            <p class="text-sm">Starting Port</p>
                         </li>
                     </ol>
                     <div class="mx-4 p-4 hidden md:block">
@@ -376,38 +377,38 @@
                                 </span>
                                     <h3 class="font-medium leading-tight">{{ $status->title }}</h3>
                                     <p class="text-sm">{{ $status->description }}</p>
-                                    <p class="text-sm">{{ $status->status_time_date }}</p>
+                                    <p class="text-sm">{{ \Carbon\Carbon::parse($status->status_time_date)->format('jS F, Y') }}</p>
                                 </li>
                             @endforeach
                         </ol>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:col-span-2">
                             <div
                                 class="bg-teal-100 border border-teal-400 px-4 py-2 flex items-center shadow-md rounded-lg">
-                                <p>Vessel Voy No. : {{ $datas->vessel_voy_no }}</p>
+                                <p><strong>Vessel Voy No. :</strong> {{ $datas->vessel_voy_no }}</p>
                             </div>
                             <div
                                 class="bg-teal-100 border border-teal-400 px-4 py-2 flex items-center shadow-md rounded-lg">
-                                <p>No. of Containers (booking quantity) : {{ $datas->no_of_containers }}</p>
+                                <p><strong>No. of Containers (booking quantity) :</strong> {{ $datas->no_of_containers }}</p>
                             </div>
                             <div
                                 class="bg-teal-100 border border-teal-400 px-4 py-2 flex items-center shadow-md rounded-lg">
-                                <p>No. of Packages : {{ $datas->no_of_packages }}</p>
+                                <p><strong>No. of Packages :</strong> {{ $datas->no_of_packages }}</p>
                             </div>
                             <div
                                 class="bg-violet-100 border border-violet-400 px-4 py-2 flex items-center shadow-md rounded-lg">
-                                <p>Measurement : {{ $datas->measurement }}</p>
+                                <p><strong>Measurement :</strong> {{ $datas->measurement }}</p>
                             </div>
                             <div
                                 class="bg-violet-100 border border-violet-400 px-4 py-2 flex items-center shadow-md rounded-lg">
-                                <p>On Board Date : {{ $datas->on_board_date }}</p>
+                                <p><strong>On Board Date :</strong> {{ \Carbon\Carbon::parse($datas->on_board_date)->format('jS F, Y') }}</p>
                             </div>
                             <div
                                 class="bg-violet-100 border border-violet-400 px-4 py-2 flex items-center shadow-md rounded-lg">
-                                <p>Gross Cargo Weight : {{ $datas->gross_cargo_weight }}</p>
+                                <p><strong>Gross Cargo Weight :</strong> {{ $datas->gross_cargo_weight }}</p>
                             </div>
                             <div
                                 class="bg-orange-100 border border-orange-400 px-4 py-2 md:col-span-3  flex justify-centeritems-center shadow-md rounded-lg">
-                                <p>Service Requirement : {{ $datas->service_requirement }}</p>
+                                <p><strong>Service Requirement :</strong> {{ $datas->service_requirement }}</p>
                             </div>
                         </div>
                     </div>

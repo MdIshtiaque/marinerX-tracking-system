@@ -1,9 +1,23 @@
 @extends('backend.master')
 
 @section('content')
-    <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500">
+    <div data-aos="fade-up"
+    data-aos-duration="1000">
+        {{-- <button type="button"
+            class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-6 text-center justify-end items-center gap-2 hidden lg:flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+                <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
+
+        </button> --}}
         <div
-            class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-5 items-center mt-3 px-5 md:px-0">
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-4 lg:gap-5 items-center mt-3 px-5 md:px-0">
             <div class="flex items-center gap-3 my-3 bg-white px-6 py-6 rounded-xl shadow-lg shadow-zinc-100/80">
                 <div class="bg-blue-100 px-2 py-2 rounded-full">
                     <svg class="text-sky-700" xmlns="http://www.w3.org/2000/svg" width="28" height="28"
@@ -16,8 +30,8 @@
                 </div>
 
                 <div>
-                    <p class="text-lg font-medium">No of Packages</p>
-                    <p class="text-sky-700 text-base font-medium">{{ $data->no_of_packages }}</p>
+                    <p class="text-lg font-medium">Bl No.</p>
+                    <p class="text-sky-700 text-base font-medium">{{ $data->bl_no }}</p>
                 </div>
             </div>
             <div class="flex items-center gap-3 my-3 bg-white px-6 py-6 rounded-xl shadow-lg shadow-zinc-100/80">
@@ -35,8 +49,8 @@
                 </div>
 
                 <div>
-                    <p class="text-lg font-medium">No of Containers</p>
-                    <p class="text-sky-700 text-base font-medium">{{ $data->no_of_containers }}</p>
+                    <p class="text-lg font-medium">Booking No.</p>
+                    <p class="text-sky-700 text-base font-medium">{{ $data->booking_no }}</p>
                 </div>
             </div>
             <div class="flex items-center gap-3 my-3 bg-white px-6 py-6 rounded-xl shadow-lg shadow-zinc-100/80">
@@ -49,8 +63,8 @@
                 </div>
 
                 <div>
-                    <p class="text-lg font-medium">Measurement</p>
-                    <p class="text-sky-700 text-base font-medium">{{ $data->measurement }}</p>
+                    <p class="text-lg font-medium">Container No.</p>
+                    <p class="text-sky-700 text-base font-medium">{{ $data->container_no }}</p>
                 </div>
             </div>
         </div>
@@ -58,7 +72,7 @@
             <div class="bg-white shadow-lg shadow-zinc-100/80 lg:col-span-2 px-5 py-5 rounded-xl">
                 <div class="flex justify-between items-center">
                     <p class="text-xl capitalize font-semibold ">Your order summary</p>
-                    <button type="button"
+                    {{-- <button type="button"
                         class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center justify-center items-center gap-2 flex lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -67,7 +81,7 @@
                             <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
                         </svg>
 
-                    </button>
+                    </button> --}}
                     {{-- <button type="button"
                         class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center justify-center items-center gap-2 hidden lg:flex">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
@@ -241,8 +255,8 @@
                     </div>
 
                     <div>
-                        <p class="text-lg font-medium">Bl No</p>
-                        <p>{{ $data->bl_no }}</p>
+                        <p class="text-lg font-medium">No of Packages</p>
+                        <p>{{ $data->no_of_packages }}</p>
                     </div>
                 </div>
                 <hr>
@@ -256,8 +270,8 @@
                     </div>
 
                     <div>
-                        <p class="text-lg font-medium">Booking No</p>
-                        <p>{{ $data->booking_no }}</p>
+                        <p class="text-lg font-medium">No of Containers</p>
+                        <p>{{ $data->no_of_containers }}</p>
                     </div>
                 </div>
                 <hr>
@@ -292,8 +306,8 @@
                     </div>
 
                     <div>
-                        <p class="text-lg font-medium">Container No</p>
-                        <p>{{ $data->container_no }}</p>
+                        <p class="text-lg font-medium">Measurement</p>
+                        <p>{{ $data->measurement }}</p>
                     </div>
                 </div>
                 <hr>
