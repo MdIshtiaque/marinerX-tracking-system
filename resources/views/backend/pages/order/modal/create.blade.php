@@ -15,6 +15,13 @@
                    placeholder="Booking no" required/>
         </div>
         <div>
+            <label for="receipt_no" class="block mb-2 text-sm font-medium text-gray-900">
+                Receipt no</label>
+            <input type="text" id="receipt_no" name="receipt_no"
+                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block w-full p-2.5"
+                   placeholder="Receipt no" required/>
+        </div>
+        <div>
             <label for="starting_port" class="block mb-2 text-sm font-medium text-gray-900">
                 Starting Port</label>
             <input type="text" id="starting_port" name="starting_port"

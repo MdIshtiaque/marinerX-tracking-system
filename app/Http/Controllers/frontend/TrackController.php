@@ -29,6 +29,11 @@ class TrackController extends Controller
             $isSearch = true;
             $datas = Order::with('status', 'currentPort', 'ports')->whereContainer_no($request->search)->first();
         }
+        if($request->inlineRadioOptions == 'option4')
+        {
+            $isSearch = true;
+            $datas = Order::with('status', 'currentPort', 'ports')->whereVessel_voy_no($request->search)->first();
+        }
 
         if(isset($datas->currentPort)){
                 foreach($datas->ports as $port){

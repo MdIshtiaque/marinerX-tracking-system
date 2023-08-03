@@ -18,6 +18,7 @@ class OrderController extends Controller
             $order = Order::create([
                 'bl_no' => $request->bl_no,
                 'booking_no' => $request->booking_no,
+                'receipt_no' => $request->receipt_no,
                 'vessel_voy_no' => $request->vessel_voy_no,
                 'no_of_packages' => $request->no_of_packages,
                 'starting_port' => $request->starting_port,

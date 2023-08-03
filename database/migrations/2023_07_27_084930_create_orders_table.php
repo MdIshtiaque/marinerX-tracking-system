@@ -16,6 +16,7 @@ return new class extends Migration
 
             $table->string('bl_no');
             $table->string('booking_no');
+            $table->string('receipt_no');
             $table->string('starting_port');
             $table->string('destination');
             $table->string('vessel_voy_no');
