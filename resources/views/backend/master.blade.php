@@ -16,8 +16,19 @@
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="public/dist/assets/app-f888e93a.css">
-    @vite('resources/css/app.css')
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: "#da373d",
+                    },
+                },
+            },
+        };
+    </script>
     <style>
         .pagination-item {
             display: inline-block;
@@ -170,8 +181,6 @@
             .responsive.recalc();
     })
 </script>
-<script src="public/dist/assets/app-4a08c204.js"></script>
-@vite('resources/css/app.js')
 @stack('js')
 </body>
 
