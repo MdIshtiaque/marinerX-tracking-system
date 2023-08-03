@@ -337,7 +337,7 @@
         <div class="px-5 md:px-0">
             <div class="bg-white container mx-auto px-5 py-5 mt-10 rounded-xl shadow-lg shadow-zinc-100/80">
                 <p class="text-xl font-semibold mb-5">Shipment Summary</p>
-                <div class="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-5  ">
+                <div class="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center gap-5  ">
                     @foreach ($data->ports as $port)
                         @php
                             $type = '';
@@ -395,7 +395,7 @@
             <div class="px-5 md:px-0">
                 <div class="bg-white container mx-auto px-5 py-5 mt-10 rounded-xl shadow-lg shadow-zinc-100/80">
                     <p class="text-xl font-semibold mb-5">Route Scheduling Summary</p>
-                    <div class="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-center gap-5  ">
+                    <div class="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center gap-5  ">
                         @foreach ($data->status as $status)
                             <div class="flex items-center gap-3  border border-slate-200 px-4 py-4 rounded-xl">
                                 <div class="bg-blue-100 px-2 py-2 rounded-full">

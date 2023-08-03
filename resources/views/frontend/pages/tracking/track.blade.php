@@ -5,58 +5,112 @@
          class="min-h-screen mb-36 relative">
         <div class="container mx-auto my-10">
             <p class="text-xl mt-5 mb-10 px-5 md:px-0 font-semibold flex justify-center">Trace Your Order Here</p>
-            <form action="" method="get">
-                <div class="flex flex-col md:flex-row mb-3 gap-3 md:gap-10 px-10 md:px-0 ">
-                    <div class="form-check form-check-inline">
+{{--            <form action="" method="get">--}}
+{{--                <div class="flex flex-col md:flex-row mb-3 gap-3 md:gap-10 px-10 md:px-0 ">--}}
+{{--                    <div class="form-check form-check-inline">--}}
+{{--                        <input class="form-check-input" type="radio" name="inlineRadioOptions"--}}
+{{--                               id="inlineRadio1"--}}
+{{--                               value="option1" {{ $request->inlineRadioOptions == 'option1' ? 'checked' : ''}} required>--}}
+{{--                        <label class="form-check-label" for="inlineRadio1">Booking No</label>--}}
+{{--                    </div>--}}
+{{--                    <div class="form-check form-check-inline">--}}
+{{--                        <input class="form-check-input" type="radio" name="inlineRadioOptions"--}}
+{{--                               id="inlineRadio2"--}}
+{{--                               value="option2" {{ $request->inlineRadioOptions == 'option2' ? 'checked' : ''}} required>--}}
+{{--                        <label class="form-check-label" for="inlineRadio2">BL No</label>--}}
+{{--                    </div>--}}
+{{--                    <div class="form-check form-check-inline">--}}
+{{--                        <input class="form-check-input" type="radio" name="inlineRadioOptions"--}}
+{{--                               id="inlineRadio3"--}}
+{{--                               value="option3" {{ $request->inlineRadioOptions == 'option3' ? 'checked' : ''}} required>--}}
+{{--                        <label class="form-check-label" for="inlineRadio3">Container No.</label>--}}
+{{--                    </div>--}}
+{{--                    <div class="form-check form-check-inline">--}}
+{{--                        <input class="form-check-input" type="radio" name="inlineRadioOptions"--}}
+{{--                               id="inlineRadio4"--}}
+{{--                               value="option4" {{ $request->inlineRadioOptions == 'option4' ? 'checked' : ''}} required>--}}
+{{--                        <label class="form-check-label" for="inlineRadio4">P/O</label>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="flex flex-col md:flex-row items-center px-10 md:px-0">--}}
+{{--                    <label for="simple-search" class="sr-only">Search</label>--}}
+{{--                    <div class="relative w-full">--}}
+{{--                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">--}}
+{{--                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"--}}
+{{--                                 fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"--}}
+{{--                                 stroke-linejoin="round">--}}
+{{--                                <circle cx="11" cy="11" r="8"></circle>--}}
+{{--                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>--}}
+{{--                            </svg>--}}
+{{--                        </div>--}}
+{{--                        <input type="text" value="{{ $request->input('search') }}" name="search" id="simple-search"--}}
+{{--                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "--}}
+{{--                               placeholder="Search here..." required>--}}
+{{--                    </div>--}}
+{{--                    <div class="flex mt-3 md:mt-0">--}}
+{{--                        <button type="submit"--}}
+{{--                                class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">--}}
+{{--                            Search--}}
+{{--                        </button>--}}
+{{--                        <a type="button" href="{{ route('track.order') }}"--}}
+{{--                           class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-teal-900 duration-300 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-teal-700 rounded-lg border border-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 ">--}}
+{{--                            Reset--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </form>--}}
+            <form class="flex flex-col items-center" action="" method="get">
+                @csrf
+                <!-- Radio buttons -->
+                <div class="flex mb-3">
+                    <div class="form-check form-check-inline pe-2">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                               id="inlineRadio1"
-                               value="option1" {{ $request->inlineRadioOptions == 'option1' ? 'checked' : ''}} required>
+                               id="inlineRadio1" value="option1" {{ $request->inlineRadioOptions == 'option1' ? 'checked' : ''}}>
                         <label class="form-check-label" for="inlineRadio1">Booking No</label>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline pe-2">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                               id="inlineRadio2"
-                               value="option2" {{ $request->inlineRadioOptions == 'option2' ? 'checked' : ''}} required>
+                               id="inlineRadio2" value="option2" {{ $request->inlineRadioOptions == 'option2' ? 'checked' : ''}}>
                         <label class="form-check-label" for="inlineRadio2">BL No</label>
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline pe-2">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                               id="inlineRadio3"
-                               value="option3" {{ $request->inlineRadioOptions == 'option3' ? 'checked' : ''}} required>
-                        <label class="form-check-label" for="inlineRadio3">Container No.</label>
+                               id="inlineRadio3" value="option3" {{ $request->inlineRadioOptions == 'option3' ? 'checked' : ''}}>
+                        <label class="form-check-label" for="inlineRadio2">Container No.</label>
+                    </div>
+                    <div class="form-check form-check-inline pe-2">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                               id="inlineRadio4" value="option4" {{ $request->inlineRadioOptions == 'option4' ? 'checked' : ''}}>
+                        <label class="form-check-label" for="inlineRadio4">Vessel No.</label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                               id="inlineRadio4"
-                               value="option4" {{ $request->inlineRadioOptions == 'option4' ? 'checked' : ''}} required>
-                        <label class="form-check-label" for="inlineRadio4">P/O</label>
+                               id="inlineRadio5" value="option5" {{ $request->inlineRadioOptions == 'option5' ? 'checked' : ''}}>
+                        <label class="form-check-label" for="inlineRadio5">P/O</label>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row items-center px-10 md:px-0">
-                    <label for="simple-search" class="sr-only">Search</label>
-                    <div class="relative w-full">
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                 fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
-                        </div>
-                        <input type="text" value="{{ $request->input('search') }}" name="search" id="simple-search"
-                               class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  "
-                               placeholder="Search here..." required>
+                <div class="relative w-full">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                             viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
                     </div>
-                    <div class="flex mt-3 md:mt-0">
-                        <button type="submit"
-                                class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
-                            Search
-                        </button>
-                        <a type="button" href="{{ route('track.order') }}"
-                           class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-teal-900 duration-300 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-teal-700 rounded-lg border border-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 ">
-                            Reset
-                        </a>
-                    </div>
+                    <input type="text" name="search" id="simple-search" value="{{ $request->input('search') }}"
+                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+                           placeholder="Search here..." required>
+                </div>
+                <div class="flex mt-2">
+                    <button type="submit"
+                            class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300 inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                        Search
+                    </button>
+                    <a type="submit" href="{{ route('track.order') }}"
+                       class="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-teal-700 rounded-lg border border-teal-700 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300">
+                        Reset
+                    </a>
                 </div>
             </form>
             <!-- routing -->
@@ -188,9 +242,9 @@
                     <div class="mx-4 p-4 hidden md:block">
                         <div class="flex items-center">
                             <div
-                                class="flex items-center relative {{ in_array("starting", $active) ? 'text-gray-100' : 'text-black-100' }}">
+                                class="flex items-center relative {{ in_array("starting", $active) ? 'text-white' : '' }}">
                                 <div
-                                    class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 border-blue-500 {{ in_array("starting", $active) ? 'bg-blue-600' : 'bg-white-100' }}">
+                                    class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 {{ in_array("starting", $active) ? 'border-teal-600' : 'border-gray-300'}} {{ in_array("starting", $active) ? 'bg-teal-600' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none"
                                          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                          stroke-linecap="round"
@@ -199,20 +253,20 @@
                                     </svg>
                                 </div>
 
-                                <div class=" text-xs font-medium capitalize text-blue-600 px-2">Starting Port</div>
+                                <div class=" text-xs font-medium capitalize text-gray-500 px-2">Starting Port</div>
                                 <div
-                                    class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium uppercase text-blue-600">
+                                    class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium uppercase text-gray-500">
                                     {{ $starting_port }}</div>
 
 
                             </div>
                             @if($second_port !== '')
                                 <div
-                                    class="flex-auto border-t-2 transition duration-500 ease-in-out {{ in_array("second", $active) ? 'border-orange-600' : 'border-gray-300' }}"></div>
+                                    class="flex-auto border-t-2 transition duration-500 ease-in-out {{ in_array("second", $active) ? 'border-teal-600' : 'border-gray-300' }}"></div>
                                 <div
-                                    class="flex items-center relative {{ in_array("second", $active) ? 'text-white' : 'text-orange-600' }}">
+                                    class="flex items-center relative {{ in_array("second", $active) ? 'text-white' : '' }}">
                                     <div
-                                        class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 {{ in_array("second", $active) ? 'bg-orange-600' : 'bg-white-600' }} border-orange-600">
+                                        class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 {{ in_array("second", $active) ? 'bg-teal-600' : '' }} border-teal-600">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20"
                                              viewBox="0 0 24 24">
                                             <path fill="currentColor" fill-rule="evenodd"
@@ -220,20 +274,20 @@
                                                   clip-rule="evenodd"/>
                                         </svg>
                                     </div>
-                                    <div class="px-2 text-xs font-medium capitalize text-orange-600">Second Port</div>
+                                    <div class="px-2 text-xs font-medium capitalize text-gray-500">Second Port</div>
                                     <div
-                                        class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium uppercase text-orange-600">
+                                        class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium uppercase text-gray-500">
                                         {{ $second_port }}</div>
 
                                 </div>
                             @endif
                             @if($third_port !== '')
                                 <div
-                                    class="flex-auto border-t-2 transition duration-500 ease-in-out {{ in_array("third", $active) ? 'border-violet-600' : 'border-violet-300' }}"></div>
+                                    class="flex-auto border-t-2 transition duration-500 ease-in-out {{ in_array("third", $active) ? 'border-teal-600' : 'border-gray-300' }}"></div>
                                 <div
-                                    class="flex items-center {{ in_array("third", $active) ? 'text-white' : 'text-violet-500' }} relative">
+                                    class="flex items-center {{ in_array("third", $active) ? 'text-white' : '' }} relative">
                                     <div
-                                        class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 {{ in_array("third", $active) ? 'bg-violet-600' : 'bg-white-600' }} border-violet-300">
+                                        class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 {{ in_array("third", $active) ? 'bg-teal-600' : '' }} border-gray-300">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20"
                                              viewBox="0 0 24 24">
                                             <path fill="currentColor" fill-rule="evenodd"
@@ -241,20 +295,20 @@
                                                   clip-rule="evenodd"/>
                                         </svg>
                                     </div>
-                                    <div class="px-2 text-xs font-medium uppercase text-violet-500">Third Port</div>
+                                    <div class="px-2 text-xs font-medium uppercase text-gray-500">Third Port</div>
                                     <div
-                                        class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium uppercase text-violet-500">
+                                        class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium uppercase text-gray-500">
                                         {{ $third_port }}</div>
                                 </div>
                             @endif
 
                             @if($destination_port !== '')
                                 <div
-                                    class="flex-auto border-t-2 transition duration-500 ease-in-out {{ in_array("destination", $active) ? 'border-teal-400' : 'border-gray-300' }}"></div>
+                                    class="flex-auto border-t-2 transition duration-500 ease-in-out {{ in_array("destination", $active) ? 'border-teal-600' : 'border-gray-300' }}"></div>
                                 <div
-                                    class="flex items-center {{ in_array("destination", $active) ? 'text-white' : 'text-teal-500' }} relative">
+                                    class="flex items-center {{ in_array("destination", $active) ? 'text-white' : '' }} relative">
                                     <div
-                                        class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 {{ in_array("destination", $active) ? 'bg-teal-400' : 'bg-white-600' }} border-teal-300">
+                                        class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 {{ in_array("destination", $active) ? 'bg-teal-600' : '' }} border-gray-300">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none"
                                              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                              stroke-linecap="round"
@@ -264,9 +318,9 @@
                                             <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
                                         </svg>
                                     </div>
-                                    <div class="px-2 text-xs font-medium uppercase text-teal-500">Destination Port</div>
+                                    <div class="px-2 text-xs font-medium uppercase text-gray-500">Destination Port</div>
                                     <div
-                                        class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium uppercase text-teal-500">
+                                        class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium uppercase text-gray-500">
                                         {{ $destination_port }}</div>
                                 </div>
                             @endif
@@ -277,7 +331,7 @@
                     <div class="px-5 md:px-0 my-20">
                         <div class="bg-white container mx-auto px-5 py-5 rounded-xl shadow-lg shadow-zinc-100/80">
                             <p class="text-xl my-1 font-semibold px-1 pb-5 md:px-0">Basic Details</p>
-                            <div class="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 items-center gap-5  ">
+                            <div class="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center gap-5  ">
                                 <div class="flex items-center gap-3  border border-slate-200 px-4 py-4 rounded-xl">
                                     <div class="bg-blue-100 px-2 py-2 rounded-full">
                                         <svg class="text-sky-700" xmlns="http://www.w3.org/2000/svg" width="28"
@@ -292,7 +346,7 @@
 
                                     <div>
                                         <p class="text-sm font-medium">Receipt No</p>
-                                        <p class="text-sky-700 text-sm font-medium">{{ $datas->id }}</p>
+                                        <p class="text-sky-700 text-sm font-medium">{{ $datas->receipt_no }}</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3  border border-slate-200 px-4 py-4 rounded-xl">
@@ -365,15 +419,15 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 items-start gap-10 mt-10 px-5 md:px-0">
 
                         <ol class="relative text-gray-500 border-l border-gray-200 md:col-span-1 flex  flex-col">
-                            @foreach ($datas->status->reverse() as $status )
+                            @foreach ($datas->status as $status )
                                 <li class="ml-6 p-2 {{ $loop->last ? 'order-last' : 'mb-10 order-3' }}">
                                 <span
-                                    class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -left-4 ring-4 ring-white ">
-                                    <svg class="w-3.5 h-3.5 text-gray-500 " aria-hidden="true"
-                                         xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                                        <path
-                                            d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2Zm-3 14H5a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2Zm0-4H5a1 1 0 0 1 0-2h8a1 1 0 1 1 0 2Zm0-5H5a1 1 0 0 1 0-2h2V2h4v2h2a1 1 0 1 1 0 2Z"/>
-                                    </svg>
+                                    class="absolute flex items-center justify-center w-8 h-8 bg-green-200 rounded-full -left-4 ring-4 ring-white ">
+                                    <svg class="w-3.5 h-3.5 text-green-500 dark:text-green-400" aria-hidden="true"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                                      d="M1 5.917 5.724 10.5 15 1.5"/>
+                                                            </svg>
                                 </span>
                                     <h3 class="font-medium leading-tight">{{ $status->title }}</h3>
                                     <p class="text-sm">{{ $status->description }}</p>
@@ -383,31 +437,31 @@
                         </ol>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:col-span-2">
                             <div
-                                class="bg-teal-100 border border-teal-400 px-4 py-2 flex items-center shadow-md rounded-lg">
+                                class="bg-cyan-50 border border-zinc-50 px-4 py-2 flex items-center shadow-md rounded-lg">
                                 <p><strong>Vessel Voy No. :</strong> {{ $datas->vessel_voy_no }}</p>
                             </div>
                             <div
-                                class="bg-teal-100 border border-teal-400 px-4 py-2 flex items-center shadow-md rounded-lg">
+                                class="bg-cyan-50 border border-zinc-50 px-4 py-2 flex items-center shadow-md rounded-lg">
                                 <p><strong>No. of Containers (booking quantity) :</strong> {{ $datas->no_of_containers }}</p>
                             </div>
                             <div
-                                class="bg-teal-100 border border-teal-400 px-4 py-2 flex items-center shadow-md rounded-lg">
+                                class="bg-cyan-50 border border-zinc-50 px-4 py-2 flex items-center shadow-md rounded-lg">
                                 <p><strong>No. of Packages :</strong> {{ $datas->no_of_packages }}</p>
                             </div>
                             <div
-                                class="bg-violet-100 border border-violet-400 px-4 py-2 flex items-center shadow-md rounded-lg">
+                                class="bg-cyan-50 border border-zinc-50 px-4 py-2 flex items-center shadow-md rounded-lg">
                                 <p><strong>Measurement :</strong> {{ $datas->measurement }}</p>
                             </div>
                             <div
-                                class="bg-violet-100 border border-violet-400 px-4 py-2 flex items-center shadow-md rounded-lg">
+                                class="bg-cyan-50 border border-zinc-50 px-4 py-2 flex items-center shadow-md rounded-lg">
                                 <p><strong>On Board Date :</strong> {{ \Carbon\Carbon::parse($datas->on_board_date)->format('jS F, Y') }}</p>
                             </div>
                             <div
-                                class="bg-violet-100 border border-violet-400 px-4 py-2 flex items-center shadow-md rounded-lg">
+                                class="bg-cyan-50 border border-zinc-50 px-4 py-2 flex items-center shadow-md rounded-lg">
                                 <p><strong>Gross Cargo Weight :</strong> {{ $datas->gross_cargo_weight }}</p>
                             </div>
                             <div
-                                class="bg-orange-100 border border-orange-400 px-4 py-2 md:col-span-3  flex justify-centeritems-center shadow-md rounded-lg">
+                                class="bg-cyan-50 border border-zinc-50 px-4 py-2 md:col-span-3  flex justify-centeritems-center shadow-md rounded-lg">
                                 <p><strong>Service Requirement :</strong> {{ $datas->service_requirement }}</p>
                             </div>
                         </div>
@@ -416,7 +470,7 @@
                 <div class="px-5 md:px-0 my-20">
                     <div class="bg-white container mx-auto px-5 py-5 rounded-xl shadow-lg shadow-zinc-100/80">
                         <p class="text-xl my-1 font-semibold px-1 pb-5 md:px-0">Container Details</p>
-                        <div class="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 items-center gap-5  ">
+                        <div class="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center gap-5">
                             <div class="flex items-center gap-3  border border-slate-200 px-4 py-4 rounded-xl">
                                 <div class="bg-blue-100 px-2 py-2 rounded-full">
                                     <svg class="text-sky-700" xmlns="http://www.w3.org/2000/svg" width="28"
