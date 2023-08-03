@@ -62,7 +62,7 @@
             <form class="flex flex-col items-center" action="" method="get">
                 @csrf
                 <!-- Radio buttons -->
-                <div class="flex mb-3">
+                <div class="flex flex-col md:flex-row mb-3 gap-3 md:gap-2 px-10 md:px-0">
                     <div class="form-check form-check-inline pe-2">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                id="inlineRadio1" value="option1" {{ $request->inlineRadioOptions == 'option1' ? 'checked' : ''}}>
